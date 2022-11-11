@@ -8,46 +8,31 @@ const { gets, print } = require('./dados');
 
 let data = gets();
 let dataSplit = data.split('/');
-print(dataSplit[1]);
+//print(dataSplit[1]);
 
+const tableMonth = [
+    {month: "Janeiro", number: 1},
+    {month: "Fevereiro", number: 2},
+    {month: "Março", number: 3},
+    {month: "Abril", number: 4},
+    {month: "Maio", number: 5},
+    {month: "Junho", number: 6},
+    {month: "Julho", number: 7},
+    {month: "Agosto", number: 8},
+    {month: "Setembro", number: 9},
+    {month: "Outubro", number: 10},
+    {month: "Novembro", number: 11},
+    {month: "Dezembro", number: 12},
+]
 
-// print(dataSplit);
-switch (dataSplit[1]) {
-    case "01":
-        console.log(dataSplit[0]+" de Janeiro de "+dataSplit[2]);
-        break;
-    case "02":
-        console.log(dataSplit[0]+" de Fevereiro de "+dataSplit[2]);
-        break;
-    case "03":
-        console.log(dataSplit[0]+" de Março de "+dataSplit[2]);
-        break;
-    case "04":
-        console.log(dataSplit[0]+" de Abril de "+dataSplit[2]);
-        break;
-    case "05":
-        console.log(dataSplit[0]+" de Maio de "+dataSplit[2]);
-        break;
-    case "06":
-        console.log(dataSplit[0]+" de Junho de "+dataSplit[2]);
-        break;
-    case "07":
-        console.log(dataSplit[0]+" de Julho de "+dataSplit[2]);
-        break;
-    case "08":
-        console.log(dataSplit[0]+" de Agosto de "+dataSplit[2]);
-        break;
-    case "09":
-        console.log(dataSplit[0]+" de Setembro de "+dataSplit[2]);
-        break;
-    case "10":
-        console.log(dataSplit[0]+" de Outubro de "+dataSplit[2]);
-        break;
-    case "11":
-        console.log(dataSplit[0]+" de Novembro de "+dataSplit[2]);
-        break;
-    case "12":
-        console.log(dataSplit[0]+"de Dezembro de "+dataSplit[2]);
-        break;
-}
+const searchMonth = tableMonth.filter(function( value){
+    if (value.number==dataSplit[1])
+     
+    return value.month;
 
+    
+}).map(obj => obj.month);
+
+// print (searchMonth);
+
+console.log(dataSplit[0]+" de "+searchMonth+" de "+dataSplit[2]);
